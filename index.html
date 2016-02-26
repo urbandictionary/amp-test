@@ -4,12 +4,404 @@
     <meta charset="utf-8">
     <title>AMP Test</title>
     <link rel="canonical" href="https://urbandictionary.github.io/amp-test/index.html" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900%7CLora:700">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <style amp-custom>
+      html, body {
+        margin: 0;
+        height: 0;
+      }
+
+      @font-face {
+        font-family: "fontcustom";
+        src: url(/assets/fontcustom-16e7f76e1c22dbe0a1668f4ef1c439be.eot);
+        src: url(/assets/fontcustom-16e7f76e1c22dbe0a1668f4ef1c439be.eot?#iefix) format("embedded-opentype"),url(/assets/fontcustom-c64ca51c0d33a02586be8448dde21a98.woff) format("woff"),url(/assets/fontcustom-a3c7d47ba947215e00b4e45ad99bd03b.ttf) format("truetype"),url(/assets/fontcustom-d057c2356e359145af6f9af5f9bd8baa.svg#fontcustom) format("svg");
+        font-weight: normal;
+        font-style: normal
+      }
+
+      body {
+        font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1.4;
+        background: #EEEEEE;
+        color: #2C353C;
+      }
+
+      ul {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 0;
+        list-style-position: outside;
+        font-family: inherit;
+      }
+
+      ul, li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .top-bar-wrapper {
+        background: #1D2439;
+        height: 130px;
+        overflow: hidden;
+      }
+
+      .ads-wrapper {
+        background: #E1E1E3;
+        height: 32px;
+      }
+
+      .top-bar,
+      .ads,
+      .content,
+      .footer {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      .top-bar {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #logo {
+        margin-top: 0.5em;
+        display: block;
+      }
+
+      #logo svg {
+        height: 49px;
+        width: 150px
+      }
+
+      #logo svg g {
+        fill-rule: evenodd
+      }
+
+      #logo:hover #logo-urban {
+        fill: #EFFF00
+      }
+
+      #logo #logo-urban {
+        fill: white
+      }
+
+      #logo #logo-dictionary {
+        fill: #EFFF00
+      }
+
+      #logo #logo-dictionary-background {
+        fill: black
+      }
+
+      .panel {
+        background: #fff;
+        padding: 2em;
+        border-style: solid;
+        border-width: 0px;
+        border-color: #e3e3e3;
+        margin-bottom: 1.25rem;
+        background: #FFFFFF;
+        color: #333333;
+        box-shadow: 1px 1px 2px #DBDBDB;
+        word-wrap: break-word;
+      }
+
+      .ribbon {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8125rem;
+        display: inline;
+        vertical-align: super;
+        background-color: #EFFF00;
+      }
+
+      .word {
+        color: #134FE6;
+        font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 129%;
+        text-decoration: none;
+        vertical-align: middle;
+      }
+
+      .examples {
+        font-style: italic;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        color: #2C353C;
+      }
+
+      .author a {
+        color: #134FE6;
+        text-decoration: none;
+        line-height: inherit;
+      }
+
+      .tags-panel .small-caps {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8125rem;
+      }
+
+      ul.no-bullet {
+        margin-left: 0;
+        list-style: none;
+      }
+
+      .tags-panel>:last-child {
+        margin-bottom: 0;
+      }
+
+      .tags-panel ul li {
+        font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 2rem;
+        line-height: 129%;
+        display: inline;
+        color: #333333;
+      }
+
+      .tags-panel ul li:after {
+        content: '\2022';
+        padding-left: 16px;
+        padding-right: 12px;
+        color: #034A84;
+        font-size: 22px;
+        vertical-align: bottom;
+      }
+
+      .tags-panel ul li:last-child:after {
+        content: none
+      }
+
+      .tags-panel ul li a {
+        text-decoration: none;
+      }
+
+      .copyright {
+        color: #999999;
+        font-size: 0.875rem;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      .copyright,
+      .copyright a {
+        color: #999999;
+        font-size: 0.875rem;
+      }
+
+      .circle-button {
+        box-shadow: 0 2px 0 black;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        display: block;
+        background: #134FE6;
+        height: 3.1875rem;
+        width: 3.1875rem;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 3.3125rem;
+        font-size: 1.5625rem;
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+      }
+
+      .icon-ud_shuffle:before {
+        content: "\f10d";
+        display: inline-block;
+        font-family: "fontcustom";
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-decoration: inherit;
+        text-rendering: optimizeLegibility;
+        text-transform: none;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased
+      }
+    </style>
     
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <amp-analytics type="googleanalytics">
+      <script type="application/json">
+        {
+          "account": "UA-31805-1",
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+
+    <div class="top-bar-wrapper">
+      <div class="top-bar">
+        <a href="/" id="logo">
+          <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 949 310" xml:space="preserve">
+            <defs>
+              <clipPath id="clipPath3974">
+                <path d="M0 612 792 612 792 0 0 0 0 612z"></path>
+              </clipPath>
+            </defs>
+            <g transform="matrix(1.25,0,0,-1.25,-15.352375,533.71165)">
+              <g clip-path="url(#clipPath3974)">
+                <g id="logo-urban">
+                  <g transform="translate(35.5879,334.2124)">
+                    <path d="M0 0C0 0 5-5 6-10 6-15 6-19 6-24 6-28 4-35 4-40c0-6 1-8 2-11 1-3 1-3 1-8 0-5-1-24-1-24l-1-15 3-7 4 4c0 0 1-3 3-6 2-3 10-6 10-6l10-3 32 13c0 0 4-3 7-4 3-1 13-6 18-7 5-1 8-2 12-2 4 0 8 1 12 3 4 1 9 3 9 3l2 12-24 16-5-4c0 0-2 17-3 26-1 9-3 21-3 21l3 2c0 0-2 16-3 20 0 4 2 14 2 16 0 2 1 8 1 8L95 12 88 15 80 12 66 18 53 11 54 3 76 3l9-6 0-6-3-3c0 0-1-10-1-17-1-7-1-15-2-23-1-10-3-19-6-27 0 0-12-7-18-10-9-3-17-3-17-3l-14 6c-2 13-4 24-5 33-1 3-1 4 0 8 0 3 2 14 2 14l-3 3c0 0 2 12 3 16 1 4 1 8 2 11 0 3 1 6 1 6l-2 7c0 0-8 3-12 4-3 1-8 2-8 2 0 0-6 0-8 0-3 0-8-1-8-1l-6-6c0 0 1-3 2-4 1-2 1-2 1-2l3-1 4-5c0 0 4 0 7 1C-3-1 0 0 0 0"></path>
+                  </g>
+                  <g transform="translate(172.6914,351.0322)">
+                    <path d="m0 0c0 0 6 1 10 2 4 0 8 1 14 1 6 0 23-2 23-2l3 4 4-5c0 0 5 1 10 0 5-1 18-5 18-5L96-21c0 0 0-2 0-7 0-5 2-11 1-13 0-2-4-15-4-15L76-71c0 0 7-13 9-23 1-10-2-20-2-20l4-5c0 0 4 0 7 1 2 1 3 2 3 2l8-3-4-13c-5 0-8 1-10 2l-3-2-4 4-3-3c0 0-5 6-8 16-4 12 1 18 1 18l-3 15-12 11-22 5-2-3 1-11 1 1c0 0 0-4 0-4 0 0 0-1 0-1l0-5-1 0 0-2-1 0c0 0 0-14 0-16 0-2 0-7 0-7l3-3c0 0 7-1 10-1 3 0 8 0 8 0l0-3 3-3-6-6c0 0-2 0-5 1-3 0-5 1-5 1l-2-2c0 0-5 1-10 1-6 0-23-3-23-3l-7 5 0 9 21 6 3 30-3 6c0 0 1 2 1 9 0 6-3 25-3 25l4 8c0 0-1 4-1 9-1 5-1 10-1 10l-2 0-2-3-18 5c0 0-1 2-2 6-1 4 0 7 0 7L0 0zm37-20c0 0 7 1 9 1 3 0 10 1 10 1l2-1 9 1 10-9c0 0-1-3-1-4 0-1-1-3-1-3l2-2 0-5-5-10c0 0-11-3-14-4-3-1-4-1-6-2-2 0-3 0-3 0l-1-3-5 6-6 0c0 0-1 12-1 18 0 7-1 15-1 15"></path>
+                  </g>
+                  <g transform="translate(285.5859,414.8105)">
+                    <path d="m0 0c0 0 3-6 8-9 5-3 7-4 10-5 3-1 8-2 8-2 0 0 3-12 4-18 1-6 2-9 2-12 0-4-1-16-2-26-1-10-1-14-1-21 0-7 1-13 2-18 1-5 2-8 2-13 1-5 0-12-1-18 0-6-2-21-2-21 0 0 11 0 11 0l5 5 9 0 4-6 36 0c0 0 8 5 13 12 5 6 7 10 10 17 3 7 5 14 7 21 1 7 3 18 3 18l-2 2c0 0-1 8-1 13-1 5-1 9-1 9l-10 13c0 0-2 2-4 6-2 4-5 12-5 12l-9 3c0 0-2 0-4 0-2 0-4 1-7 1-3 0-4 0-5 0-1-1-2 0-4-1-2 0-6-2-10-4-4-2-8-7-10-8-1-1-3-4-3-4l-6 0-2 4 5 26-3 9 3 13c0 0-2 4-3 6-1 2-2 5-2 5 0 0-10 1-17 1C17 11 10 13 8 12 5 11 4 9 2 6 1 3 0 0 0 0m67-59c0 0-4-4-10-15-6-10-7-14-9-22-2-8-2-10-2-14 0-4 1-3 1-7 0-4-1-6-1-6 0 0 5-9 13-14 7-6 13-9 16-11 3-2 7-2 7-2 0 0 1 2 4 4 3 3 6 4 6 4 0 0 2 4 5 8 3 4 5 6 5 6 0 0 1 6 2 11 1 5 1 9 1 9 0 0-1 4-2 8-1 4-2 7-2 7 0 0 1 2 1 3 0 1-1 5-1 9-1 4-1 6-1 6 0 0-3 5-6 8-3 4-6 9-6 9 0 0 0-1-5 0-5 0-3 1-6 1-3 0-3-1-5-1-2 0-1 0-3 0-1 0-2 0-2 0"></path>
+                  </g>
+                  <g transform="translate(474.7412,344.7549)">
+                    <path d="m0 0c0 0-3-3-3-4-1-1-2-1-3-2-1-1-1-1-3-2l-6-5-9 0-5 12c-1 2-2 3-2 5 0 2 0 8 1 14 1 6 2 9 2 9 0 0 4 3 8 6 4 2 10 6 13 7 3 1 4 1 5 2 1 0 2 0 2 0 0 0 0 0 0 1 0 1 1 1 3 1 2 0 5 0 7 0 3 0 3-1 6-1 3 0 7 0 9 0 1 0 2 0 3 0 2-1 6-2 8-3 2-1 16-5 16-5 0 0 2-2 4-6 3-4 5-6 5-6 0 0 1-12 1-15 0-2 1-17 1-18 0-1 0 0 0-2 0-2 0-4 0-6 0-2 0-11 0-11l-2 0c0 0 1-5 1-8 0-4 1-8 1-8 0 0 0-1-1-2-1-1-1-2-1-2 0 0 3-3 5-5 1-2 4-5 4-5 0 0 3 0 5 1 3 0 8 1 9 1 1 0 3 0 3 0 0 0 0-8 1-12 0-4 1-9 1-9l-9-10c0 0-4 0-7-1-3 0-9-1-9-1 0 0-6 4-9 6-3 2-8 6-8 6L32-88 17-93c0 0-10 0-17 0-6 0-10 0-14 1-4 0-11 1-11 1 0 0-5 6-7 8-2 2-5 6-5 6 0 0-2 10-3 18-1 8 0 16 0 16 0 0 2 4 4 7 2 3 5 8 5 8 0 0 15 5 19 6 4 1 6 2 9 2 3 0 2 0 7 1 4 1 10 4 14 6 3 2 5 3 6 4 1 1 2 2 2 2 0 0 1 0 3 0 2 0 5 2 8 3 2 1 4 1 4 1 0 0 1 1 3 3 2 1 3 2 3 2l0 9c0 0-5 4-12 7-7 3-11 5-14 6-4 1-5 2-8 2C9 26 6 25 5 24 3 24 1 23-1 22c-1-1-2-1-3-3-1-2-2-3-2-4 0-1-1-1-1-1 0 0 0-3 1-6 1-3 4-6 4-7C-1 1 0 0 0 0m-6-38-15-10 1-15 6-9c0 0 19 0 22 0 3 0 5 0 5 0 0 0 5 1 8 3 3 1 8 3 9 3 1 0 1 0 1 0l9 15c0 0-1 5-1 10 0 4 0 10 0 10l-8 0c0 0-6-2-11-3-5-1-4-2-8-3-4-1-6 0-9 0-3 0-5 0-8 0-2 0-3 0-3 0"></path>
+                  </g>
+                  <g transform="translate(582.1514,389.7217)">
+                    <path d="m0 0-13-11 2-7 0 0c0 0 4-1 6-2 3-1 5-1 7-2 1 0 3-1 3-1l3-3c0 0-2-6-2-7 0-1 0-1 0-1l3-8 3-7-7 0 0-9 6-8c0 0 0-6-2-12-2-6-4-8-4-8l2-2c0 0-3-11-3-12 0-1 0-1 0-1l3-5c0 0-1-5-1-7 0-2 0-4 0-4l-12-6-6-12c0 0 4-2 8-3 4-1 5-2 10-2 5 1 7 3 7 3 0 0 4-1 7-2 3-1 7-2 7-2l0 1 2-2 3 5c0 0 0 0 2 0 2-1 10-2 10-2l6 5 0 6c0 0 0 0-2 2-2 2-3 5-3 5 0 0-3-1-5 0-2 0-11 4-11 4 0 0-2 28-2 33 0 5-2 25-2 25l2 2c0 0-1 12-2 14 0 2 0 3 0 4 0 2 1 3 1 3 0 0 6-8 9-13 3-5 8-16 9-20 2-4 4-8 5-11 2-3 6-10 6-10 0 0 0 11-1 18 0 7-3 13-4 17-1 4-6 14-6 14l2 7-10 10 4 12-7 7c0 0-1 0-4 0-3 0-5 1-7 1-2 1-4 1-4 1l-2-2c0 0-5 1-9 2C5-1 0 0 0 0"></path>
+                  </g>
+                  <g transform="translate(639.1406,301.7031)">
+                    <path d="m0 0c0 0 6-3 8-3 2 0 7 0 7 0l0-1 9 0 0-9 4-6-2-2c0 0 0 0 0-1 0 0 1 0 1 0l1-20c0 0-2-2-3-4-1-2-3-5-3-5 0 0-4 0-8 2-4 2-6 6-6 6l0 6-4 5-4 0 0 11 4 4c0 0-2 3-3 5-1 2-2 4-2 4 0 0 1 5 2 7C0-1 0 0 0 0"></path>
+                  </g>
+                  <g transform="translate(654.9531,302.5469)">
+                    <path d="m0 0 7 0c0 0 0 4 0 8 0 5 1 10 1 13 0 3-1 4-1 6 0 2 0 2 0 5 1 3 2 9 3 11C10 46 10 48 10 48l-2 0 2 1c0 0 0 3-1 7-1 3-1 6-1 6 0 0 1 1 2 2 1 1 2 2 2 2l9-2c0 0 3 2 5 5 2 3 3 5 4 6 1 1 1 3 1 3 0 0-4 3-6 4-2 1-5 4-5 4 0 0-1 0-5 0-4-1-8-1-12-2-4 0-5-1-8 0-3 1-6 2-6 2 0 0-6-2-8-3-2 0-5-2-5-2l-2-8 4-6c0 0 3-1 7-2 3-1 6-2 7-2 0 0 1 1 1 1 0 0 1-1 2-2 1-1 2-2 2-2 0 0 1-6 1-12 1-6 2-12 2-15 0-3 1-3 0-6C-2 26-4 15-4 15c0 0 1-3 2-7C-1 4 0 0 0 0"></path>
+                  </g>
+                </g>
+                <g id="logo-dictionary-background" transform="translate(271.3555,255.4404)">
+                  <path d="m0 0 501-17 0-60L0-60 0 0z"></path>
+                </g>
+                <g id="logo-dictionary">
+                  <g transform="translate(411.3711,229.9551)">
+                    <path d="m0 0c0 3 2 5 5 5l18 0c3 0 5-2 5-5l0-4-7-1 0 5-14 0 0-14 14 0 0 5 7-2 0-4c0-3-2-5-5-5L5-20c-3 0-5 2-5 5L0 0z"></path>
+                  </g>
+                  <g transform="translate(377.2852,235.9395)">
+                    <path d="M0 0 7 0 7-25 0-25 0 0z"></path>
+                  </g>
+                  <g transform="translate(500.7227,233.7773)">
+                    <path d="M0 0 7 0 7-25 0-25 0 0z"></path>
+                  </g>
+                  <g transform="translate(467.3145,234.3633)">
+                    <path d="M0 0 7 0 7-25 0-25 0 0z"></path>
+                  </g>
+                  <g transform="translate(456.7441,234.5479)">
+                    <path d="M0 0 29-1 29-6 0-6 0 0z"></path>
+                  </g>
+                  <g transform="translate(588.0039,230.9922)">
+                    <path d="m0 0 18-15 0 14 7 0 0-25-4 0-2 0L2-10 1-25-6-25-5 0 0 0z"></path>
+                  </g>
+                  <g transform="translate(529.4346,227.582)">
+                    <path d="M0 0C0 3 2 5 5 5L27 4c3 0 5-2 5-5l0-15c0-3-2-5-5-5l-22 0c-3 0-5 2-5 5L0 0zM7-1 24-1 24-15 7-14 7-1z"></path>
+                  </g>
+                  <g transform="translate(647.8594,229.9482)">
+                    <path d="m0 0 14-25-8 0-3 5-14 0-3-5-7 0L-6 0 0 0 0 0zm1-14-4 8-4-7 8 0z"></path>
+                  </g>
+                  <g transform="translate(676.4063,228.8828)">
+                    <path d="m0 0 6 0 1 0 17 0c2 0 4-2 4-4l0-7c0-2-2-4-4-4l-3 0 11-9-10 0-10 9-4 0 0-9-7 0L0 0zm7-5 0-5 13 0c1 0 1 0 1 1l0 3c0 1 0 1-1 1L7-5z"></path>
+                  </g>
+                  <g transform="translate(715.5215,228.1328)">
+                    <path d="m0 0 10 0 8-9 8 8 9 0-14-13 0-11-7 0 0 11L0 0z"></path>
+                  </g>
+                  <g transform="translate(331.832,236.7314)">
+                    <path d="m0 0 16 0c7 0 12-6 12-12L28-13c0-7-6-12-12-12l-12 0-4 0-3 0L-3 0 0 0zm4-19 10 0c3 0 6 3 6 6l0 1c0 3-3 6-6 6L4-5 4-19z"></path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a class="circle-button" href="http://www.urbandictionary.com/random.php">
+          <i class="icon-ud_shuffle"></i>
+        </a>
+      </div>
+    </div>
+    <div class="ads-wrapper">
+      <div class="ads"></div>
+    </div>
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="panel">
+          <span class="ribbon">Top Definition</span>
+          <br>
+          <a href="http://www.urbandictionary.com/define.php?term=Eddiction&defid=8807243" class="word">eddiction</a>
+          <p class="definition">
+            An addiction to electronic devices such as laptops, smartphones, and tablets. Eddiction is characterized by the constant need to check your smartphone for the latest Facebook posts, Twitter updates, news, etc. People with eddiction prefer spending time browsing the Internet over social interaction.
+          </p>
+          <p class="examples">
+            Matt suffers from eddiction. He's always updating his Twitter and posting instagram pics instead of chilling with me, the big brother he never had.
+          </p>
+          <p class="author">
+            <strong>
+              by
+              <a href="http://www.urbandictionary.com/author.php?author=RBK4LIFE">RBK4LIFE</a>
+              February 04, 2016
+            </strong>
+          </p>
+          <amp-iframe height="60"
+            sandbox="allow-scripts"
+            src="https://urbandictionary.github.io/amp-test/vote_buttons.html"
+            >
+            <div placeholder></div>
+          </amp-iframe>
+        </div>
+        <div class="panel tags-panel">
+          <span class="small-caps">5 Words Related to Eddiction</span>
+          <ul class="tags no-bullet">
+            <li><a href="#">addiction</a></li>
+            <li><a href="#">affliction</a></li>
+            <li><a href="#">clothing</a></li>
+            <li><a href="#">douche bags</a></li>
+            <li><a href="#">ed hardy</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="ribbon">2</span>
+          <br>
+          <a href="http://www.urbandictionary.com/define.php?term=Eddiction&defid=8807243" class="word">eddiction</a>
+          <p class="definition">Someone who is blindly addicted to wearing Ed Hardy clothing.</p>
+          <p class="examples">"Tommy couldn't resist the saber tooth tiger hat with emerald encrusted ruby skulls. What can you say, he suffers from an Eddiction"</p>
+          <p class="author">
+            <strong>
+              by
+              <a href="http://www.urbandictionary.com/author.php?author=Factskills">Factskills</a>
+              February 04, 2016
+            </strong>
+          </p>
+          <amp-iframe height="60"
+            sandbox="allow-scripts"
+            src="https://urbandictionary.github.io/amp-test/vote_buttons.html"
+          ></amp-iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="copyright">
+        © 1999-2016 Urban Dictionary ®
+        <br>
+        <a href="/tos.php">terms of service</a>
+        &nbsp;
+        <a href="/privacy.php">privacy</a>
+        &nbsp;
+        <a href="https://urbandictionary.wufoo.com/forms/how-can-we-help-you/">feedback</a>
+        &nbsp;
+        <a href="/remove.php">remove</a>
+      </div>
+    </div>
   </body>
 </html>
