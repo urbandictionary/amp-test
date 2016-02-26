@@ -55,6 +55,12 @@
         height: 32px;
       }
 
+      .ads {
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 32px;
+      }
+
       .top-bar,
       .ads,
       .content,
@@ -71,7 +77,7 @@
 
       #logo {
         margin-top: 0.5em;
-        display: block;
+        display: inline-block;
       }
 
       #logo svg {
@@ -182,6 +188,10 @@
 
       .tags-panel ul li a {
         text-decoration: none;
+      }
+
+      .tags-panel a:hover {
+        color: #05ff56
       }
 
       .copyright {
@@ -332,7 +342,9 @@
       </div>
     </div>
     <div class="ads-wrapper">
-      <div class="ads"></div>
+      <div class="ads">
+        <strong>Some ad banners will be here</strong>
+      </div>
     </div>
     <div class="content-wrapper">
       <div class="content">
@@ -363,11 +375,11 @@
         <div class="panel tags-panel">
           <span class="small-caps">5 Words Related to Eddiction</span>
           <ul class="tags no-bullet">
-            <li><a href="#">addiction</a></li>
-            <li><a href="#">affliction</a></li>
-            <li><a href="#">clothing</a></li>
-            <li><a href="#">douche bags</a></li>
-            <li><a href="#">ed hardy</a></li>
+            <li><a href="http://www.urbandictionary.com/define.php?term=addiction">addiction</a></li>
+            <li><a href="http://www.urbandictionary.com/define.php?term=affliction">affliction</a></li>
+            <li><a href="http://www.urbandictionary.com/define.php?term=clothing">clothing</a></li>
+            <li><a href="http://www.urbandictionary.com/define.php?term=douche+bags">douche bags</a></li>
+            <li><a href="http://www.urbandictionary.com/define.php?term=ed+hardy">ed hardy</a></li>
           </ul>
         </div>
         <div class="panel">
@@ -394,13 +406,13 @@
       <div class="copyright">
         © 1999-2016 Urban Dictionary ®
         <br>
-        <a href="/tos.php">terms of service</a>
+        <a href="http://www.urbandictionary.com/tos.php">terms of service</a>
         &nbsp;
-        <a href="/privacy.php">privacy</a>
+        <a href="http://www.urbandictionary.com/privacy.php">privacy</a>
         &nbsp;
         <a href="https://urbandictionary.wufoo.com/forms/how-can-we-help-you/">feedback</a>
         &nbsp;
-        <a href="/remove.php">remove</a>
+        <a href="http://www.urbandictionary.com/remove.php">remove</a>
       </div>
     </div>
   </body>
