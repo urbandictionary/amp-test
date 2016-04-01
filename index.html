@@ -46,8 +46,9 @@
 
       .top-bar-wrapper {
         background: #1D2439;
-        height: 130px;
+        height: 80px;
         overflow: hidden;
+        padding: 0em 1em;
       }
 
       .ads-wrapper {
@@ -140,6 +141,11 @@
         color: #333333;
         box-shadow: 1px 1px 2px #DBDBDB;
         word-wrap: break-word;
+      }
+      @media only screen and (max-width: 960px) {
+        .panel{
+          padding: 1em;
+        }
       }
 
       .ribbon {
@@ -261,7 +267,7 @@
         font-smoothing: antialiased
       }
     </style>
-    
+
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -363,9 +369,9 @@
       </div>
     </div>
     <div class="ads-wrapper">
-      <div class="ads">
+      <!-- <div class="ads">
         <strong>Some ad banners will be here</strong>
-      </div>
+      </div> -->
     </div>
     <div class="content-wrapper">
       <div class="content">
