@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "serve": "h -n amp-test -- watchalive"
+  },
+  "devDependencies": {
+    "watchalive": "^1.1.9"
+  }
+}
