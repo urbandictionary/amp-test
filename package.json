@@ -3,6 +3,7 @@
     "serve": "h -n amp-test -- watchalive"
   },
   "devDependencies": {
+    "minihost": "^0.4.0",
     "watchalive": "^1.1.9"
   }
 }
