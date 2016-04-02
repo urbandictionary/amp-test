@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "h -n amp-test -- watchalive",
     "serve": "h -n amp-test -- watchalive"
   },
   "devDependencies": {
