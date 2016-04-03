@@ -363,6 +363,15 @@
             </g>
           </svg>
         </a>
+        <div class="search-wrapper">
+          <amp-iframe height="50" width="350"
+            frameborder="0"
+            sandbox="allow-scripts allow-sameorigin"
+            src="https://urbandictionary.github.io/amp-test/search.html"
+            >
+            <div placeholder></div>
+          </amp-iframe>
+        </div>
         <a class="circle-button" href="http://www.urbandictionary.com/random.php">
           <i class="icon-ud_shuffle"></i>
         </a>
@@ -448,5 +457,12 @@
         <a href="http://www.urbandictionary.com/remove.php">remove</a>
       </div>
     </div>
+    <script type="text/javascript">
+      window.addEventListener('message', function(event) {
+        if (event.data.sentinel === 'search-iframe' && event.data.type === 'search-link') {
+          window.location.assign(event.data.url)
+        }
+      });
+    </script>
   </body>
 </html>
