@@ -50,14 +50,9 @@
           var input = document.querySelector('#term').value;
           var searchLink = 'http://www.urbandictionary.com/define.php?term='+encodeURI(input);
 
-          // cant change parent url without messages?
-          window.parent.postMessage({
-            sentinel: 'search-iframe',
-            type: 'search-link',
-            url: searchLink
-          }, '*')
+          top.window.location.href= searchLink;
 
-          return false
+          return false;
         }
       }
     </script>
