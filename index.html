@@ -48,7 +48,6 @@
         background: #1D2439;
         height: 80px;
         overflow: hidden;
-        padding: 0em 1em;
       }
 
       .ads-wrapper {
@@ -266,6 +265,13 @@
         -webkit-font-smoothing: antialiased;
         font-smoothing: antialiased
       }
+
+      .search-wrapper,
+      .search-wrapper amp-iframe {
+        width: 100% !important;
+        max-width: 750px;
+        height: 50px;
+      }
     </style>
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -364,12 +370,13 @@
           </svg>
         </a>
         <div class="search-wrapper">
-          <amp-iframe height="50" width="350"
+          <amp-iframe height="50" width="750"
             frameborder="0"
             sandbox="allow-scripts allow-same-origin allow-top-navigation"
             src="https://urbandictionary.github.io/amp-test/search.html"
             >
             <div placeholder></div>
+            <div overflow></div>
           </amp-iframe>
         </div>
         <a class="circle-button" href="http://www.urbandictionary.com/random.php">
